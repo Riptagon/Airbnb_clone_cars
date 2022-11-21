@@ -1,2 +1,16 @@
-<h1>Pages#home</h1>
-<p><%= @cars %></p>
+<div class="container my-3">
+  <h1>Moin</h1>
+  <p><% @cars.each do |car| %></p>
+<div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= car.brand%> <%= car.model %></h2>
+      <p>Short description here!</p>
+    </div>
+    <h2 class="card-trip-pricing"> <%= car.price %>€</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
+  <% end %>
+</div>
