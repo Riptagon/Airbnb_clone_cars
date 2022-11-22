@@ -1,8 +1,4 @@
-<div class="container">
-  <h1>Rent a Car</h1>
-    <div class="cards">
-      <% @cars.each do |car| %>
-        <div class="card-trip">
+<div class="card-trip">
           <% if car.photo.attached? %>
               <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -27,8 +23,8 @@
           <% else %>
             <img alt="Le Wagon" width="200" src="https://cdn.motor1.com/images/mgl/n21yR/s3/ferrari-488-pista-im-test.jpg">
           <% end %>
-        </div>
           <div class="card-trip-infos">
+          </div>
             <div>
               <h2><%= car.brand%> <%= car.model %></h2>
               <p>Short description here!</p>
@@ -37,6 +33,3 @@
             <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
           </div>
         </div>
-      <% end %>
-    </div>
-</div>

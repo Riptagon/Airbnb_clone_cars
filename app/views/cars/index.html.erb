@@ -3,40 +3,29 @@
     <div class="cards">
       <% @cars.each do |car| %>
         <div class="card-trip">
-          <% if car.photo.attached? %>
-              <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="<%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>" class="d-block w-100" alt="pic1">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="<%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>" class="d-block w-100" alt="pic2">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="<%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>" class="d-block w-100" alt="pic3">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-          <% else %>
-            <img alt="Le Wagon" width="200" src="https://cdn.motor1.com/images/mgl/n21yR/s3/ferrari-488-pista-im-test.jpg">
-          <% end %>
-        </div>
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= car.brand%> <%= car.model %></h2>
-              <p>Short description here!</p>
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://cdn.motor1.com/images/mgl/n21yR/s3/ferrari-488-pista-im-test.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://cdn.motor1.com/images/mgl/n21yR/s3/ferrari-488-pista-im-test.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://cdn.motor1.com/images/mgl/n21yR/s3/ferrari-488-pista-im-test.jpg" class="d-block w-100" alt="...">
+              </div>
             </div>
-            <h2 class="card-trip-pricing"> <%= car.price %>€ per Day</h2>
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          </div>
+          <div class="card-trip-infos">
+          <div>
+            <h2><%= "#{car.brand} #{car.model}" %></h2>
+            <p>Short description here!</p>
+          </div>
+          <h2 class="card-trip-pricing">$<%= car.price %></h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
           </div>
         </div>
+
       <% end %>
     </div>
 </div>
