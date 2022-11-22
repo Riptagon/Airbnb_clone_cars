@@ -1,0 +1,52 @@
+<%# title => e.g Ferrari - Pista 488 %>
+<h1 class="car-title text-center my-3"><%= "#{@car.brand} - #{@car.model}" %></h1>
+
+<%# bootstrap container %>
+<div class="container">
+
+<%# car card with 2 columns %>
+<div class="card-car">
+
+  <%# first column of the car card %>
+  <div class="content">
+    <div class="images">
+      <i class="fa-solid fa-arrow-left btn btn-outline-primary rounded-circle btn-lg"></i>
+      <img class = "image" src="https://brixtonforged.com/wp-content/uploads/2021/10/DSC02788.jpg" />
+      <i class="fa-solid fa-arrow-right btn btn-outline-primary rounded-circle btn-lg"></i>
+    </div>
+    <div class="infos">
+    <div>
+      <h2><%= @car.model %></h2>
+      <p>
+        The Ferrari 488 Pista is powered by the most powerful V8 engine in the Maranello marque’s history and is the company’s special series sports car with the highest level yet of technological transfer from racing.
+        In fact the name, meaning ‘track’ in Italian, was chosen speciﬁcally to testify to Ferrari’s unparalleled heritage in motor sports.
+        Technically, the Ferrari 488 Pista encompasses all of the experience built up on the world’s circuits by the 488 Challenge and the 488 GTE.
+      </p>
+    </div>
+    </div>
+  </div>
+
+  <%# second column of the car card %>
+  <div class="details">
+    <div class="infos">
+    <% @car.attributes.each do |key, val| %>
+      <% unless key == "id" || key == "created_at" || key == "updated_at" %>
+        <p class="title"><%= key.upcase %></p>
+        <p class="ctn"><%= val %></p>
+        <hr>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="links">
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/krokrob", class: "card-user rounded-circle" %>
+    <%= link_to "Rent Now!", "#", class: "card-btn"  %>
+  </div>
+
+
+<%# end of the card %>
+</div>
+
+<%# end of the container %>
+</div>

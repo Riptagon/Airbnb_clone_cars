@@ -1,10 +1,11 @@
 class CarsController < ApplicationController
+  before_action :set_car, only: %i[show]
+
   def index
     @cars = Car.all
   end
 
   def show
-    @car = Car.find(params[:id])
   end
 
   def new
@@ -16,6 +17,11 @@ class CarsController < ApplicationController
   end
 
   def destroy
+  end
 
+  private
+
+  def set_car
+    @car = Car.find(params[:id])
   end
 end
