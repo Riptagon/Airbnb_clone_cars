@@ -1,2 +1,7 @@
-<h1>Pages#home</h1>
-<p><%= @cars %></p>
+<h1>Rent a car</h1>
+<ul>
+  <% @cars.each do |car| %>
+    <li><%= car.brand %>-<%= car.model %></li>
+    
+  <% end %>
+</ul>
