@@ -2,6 +2,10 @@
 <ul>
   <% @cars.each do |car| %>
     <li><%= car.brand %>-<%= car.model %></li>
-    
+    <% if car.photo.attached? %>
+      <li><%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %></li>
+    <% else %>
+      <img alt="Le Wagon" width="200" src="https://cdn.motor1.com/images/mgl/n21yR/s3/ferrari-488-pista-im-test.jpg">
+    <% end %>
   <% end %>
 </ul>
