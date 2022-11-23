@@ -6,5 +6,4 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :cars, except: %i[index edit update]
-  resources :users, only: %i[create new]
 end
