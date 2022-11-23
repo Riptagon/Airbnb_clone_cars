@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @bookings = Booking.all
   end
@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.car = Car.find params[:car_id]
     @booking.user = current_user
     if @booking.save
-      redirect_to root_path
+      redirect_to car_bookings_path
     else
       render car_path(@booking.car), status: :unproccesable_entity
     end
