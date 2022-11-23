@@ -5,15 +5,16 @@
       <%= link_to car_path(car), class:"card-trip text-decoration-none" do %>
           <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
+            <% car.photos.each_with_index do |photo, ind| %>
+              <% if ind.zero? %>
               <div class="carousel-item active">
-                <img src="https://cdn.motor1.com/images/mgl/n21yR/s3/ferrari-488-pista-im-test.jpg" class="d-block w-100" alt="...">
+                <%= cl_image_tag(photo.key, width: 400, height: 400, crop: :fill, class: "d-block w-100") %>
               </div>
+              <% end %>
               <div class="carousel-item">
-                <img src="https://cdn.motor1.com/images/mgl/n21yR/s3/ferrari-488-pista-im-test.jpg" class="d-block w-100" alt="...">
+                <%= cl_image_tag(photo.key, width: 400, height: 400, crop: :fill, class: "d-block w-100") %>
               </div>
-              <div class="carousel-item">
-                <img src="https://cdn.motor1.com/images/mgl/n21yR/s3/ferrari-488-pista-im-test.jpg" class="d-block w-100" alt="...">
-              </div>
+            <% end %>
             </div>
           </div>
           <div class="card-trip-infos">

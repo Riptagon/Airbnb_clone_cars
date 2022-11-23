@@ -10,9 +10,28 @@
   <%# first column of the car card %>
   <div class="content">
     <div class="images">
-      <i class="fa-solid fa-arrow-left btn btn-outline-primary rounded-circle btn-lg"></i>
-      <img class = "image" src="https://brixtonforged.com/wp-content/uploads/2021/10/DSC02788.jpg" />
-      <i class="fa-solid fa-arrow-right btn btn-outline-primary rounded-circle btn-lg"></i>
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <% @car.photos.each_with_index do |photo, ind| %>
+            <% if ind.zero? %>
+              <div class="carousel-item active">
+                <%= cl_image_tag(photo.key, width: 400, height: 400, crop: :fill, class: "d-block w-100") %>
+              </div>
+            <% end %>
+            <div class="carousel-item">
+              <%= cl_image_tag(photo.key, width: 400, height: 400, crop: :fill, class: "d-block w-100") %>
+            </div>
+          <% end %>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
     <div class="infos">
     <div>
@@ -30,7 +49,7 @@
   <div class="details">
     <div class="infos">
     <% @car.attributes.each do |key, val| %>
-      <% unless key == "id" || key == "created_at" || key == "updated_at" %>
+      <% unless key == "id" || key == "created_at" || key == "updated_at" || key == "description" %>
         <p class="title"><%= key.upcase %></p>
         <p class="ctn"><%= val %></p>
         <hr>
