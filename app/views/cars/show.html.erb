@@ -41,7 +41,9 @@
 
   <div class="links">
     <%= image_tag "https://kitt.lewagon.com/placeholder/users/krokrob", class: "card-user rounded-circle" %>
-    <%= link_to "Rent Now!", "#", class: "card-btn"  %>
+    <%= simple_form_for [@car, @booking] do |f| %>
+    <%= f.submit "Rent Now!", class: "btn btn-outline-primary" %>
+    <% end %>
   </div>
 
 
