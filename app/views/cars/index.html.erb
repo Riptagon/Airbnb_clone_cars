@@ -2,6 +2,7 @@
   <h1>Rent a Car</h1>
     <div class="cards">
       <% @cars.each do |car| %>
+
         <div class="card-trip">
           <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -18,7 +19,8 @@
           </div>
           <div class="card-trip-infos">
           <div>
-            <h2><%= "#{car.brand} #{car.model}" %></h2>
+          <%=link_to "#{car.brand} - #{car.model}", car_path(car) %>
+
             <p>Short description here!</p>
           </div>
           <h2 class="card-trip-pricing">$<%= car.price %></h2>
