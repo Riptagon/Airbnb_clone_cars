@@ -9,7 +9,8 @@
     <%= f.input :fuel_consumption %>
     <%= f.input :price %>
     <%= f.input :hp %>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :description %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
 
     <%= f.submit "Submit review", class: "btn btn-primary" %>
