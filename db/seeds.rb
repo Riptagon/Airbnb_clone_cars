@@ -71,7 +71,12 @@ honda = {
 puts "creating car"
 
 user1 = User.create username: 'test', email: 'test@test.com', password: '123123'
+img = URI.open("https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-PNG-Image-HD.png")
+user1.photo.attach({io: img, filename: "user_one", content_type: "image/png"})
+
 user2 = User.create username: 'test2', email: 'test2@test2.com', password: '123123'
+img = URI.open("https://simg.nicepng.com/png/small/107-1070892_avatar-png-avatar-2.png")
+user2.photo.attach({io: img, filename: "user_one", content_type: "image/png"})
 
 
 car = Car.new ferrari
