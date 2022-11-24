@@ -70,17 +70,23 @@ honda = {
 
 puts "creating car"
 
+user1 = User.create username: 'test', email: 'test@test.com', password: '123123'
+user2 = User.create username: 'test2', email: 'test2@test2.com', password: '123123'
+
 
 car = Car.new ferrari
 car.photos.attach(ferrari_hash_images)
+car.user = user1
 car.save!
 
 car = Car.new mclaren
 car.photos.attach(mclaren_hash_images)
+car.user = user2
 car.save!
 
 car = Car.new honda
 car.photos.attach(honda_hash_images)
+car.user = user1
 car.save!
 
 puts "done"

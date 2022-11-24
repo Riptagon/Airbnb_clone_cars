@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>My cars</h1>
+    <div class="cards">
+      <% @cars.each do |car| %>
+      <%= link_to car_path(car), class:"card-trip text-decoration-none" do %>
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+            <% car.photos.each_with_index do |photo, ind| %>
+              <% if ind.zero? %>
+              <div class="carousel-item active cars-img">
+                <%= cl_image_tag(photo.key, width: 500, height: 300, crop: :fit, class: "d-block w-100") %>
+              </div>
+              <% else %>
+              <div class="carousel-item cars-img">
+                <%= cl_image_tag(photo.key, width: 500, height: 300, crop: :fill, class: "d-block w-100") %>
+              </div>
+              <% end %>
+            <% end %>
+            </div>
+          </div>
+          <div class="card-trip-infos">
+          <div>
+            <h2><%= "#{car.brand} #{car.model}" %></h2>
+            <p>Short description here!</p>
+          </div>
+          <h2 class="card-trip-pricing">$<%= car.price %></h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          </div>
+
+
+      <% end %>
+      <% end %>
+
+    </div>
+</div>
