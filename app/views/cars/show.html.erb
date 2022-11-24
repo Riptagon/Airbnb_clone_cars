@@ -9,17 +9,17 @@
 
   <%# first column of the car card %>
   <div class="content">
-    <div class="images">
+    <div class="container mb-3">
       <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
           <% @car.photos.each_with_index do |photo, ind| %>
             <% if ind.zero? %>
               <div class="carousel-item active">
-                <%= cl_image_tag(photo.key, width: 500, height: 400, crop: :fill, class: "d-block w-100") %>
+                <%= cl_image_tag(photo.key, class: "d-block w-100") %>
               </div>
             <% else %>
             <div class="carousel-item">
-              <%= cl_image_tag(photo.key, width: 500, height: 400, crop: :fill, class: "d-block w-100") %>
+              <%= cl_image_tag(photo.key, class: "d-block w-100") %>
             </div>
             <% end %>
           <% end %>
