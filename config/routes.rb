@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'properties/index'
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'users/registrations' }
   root to: "cars#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
