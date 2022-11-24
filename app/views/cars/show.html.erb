@@ -15,11 +15,11 @@
           <% @car.photos.each_with_index do |photo, ind| %>
             <% if ind.zero? %>
               <div class="carousel-item active">
-                <%= cl_image_tag(photo.key, width: 400, height: 400, crop: :fill, class: "d-block w-100") %>
+                <%= cl_image_tag(photo.key, width: 500, height: 400, crop: :fill, class: "d-block w-100") %>
               </div>
             <% end %>
             <div class="carousel-item">
-              <%= cl_image_tag(photo.key, width: 400, height: 400, crop: :fill, class: "d-block w-100") %>
+              <%= cl_image_tag(photo.key, width: 500, height: 400, crop: :fill, class: "d-block w-100") %>
             </div>
           <% end %>
         </div>
