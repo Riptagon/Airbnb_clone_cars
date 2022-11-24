@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get 'peach/new'
+  get 'properties/index'
   devise_for :users
   root to: "cars#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  get "mycars", to: "pages#dashboard"
 
   # Defines the root path route ("/")
   # root "articles#index"
