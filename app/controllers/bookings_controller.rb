@@ -19,4 +19,10 @@ class BookingsController < ApplicationController
       render car_path(@booking.car), status: :unproccesable_entity
     end
   end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to car_bookings_path(@booking.car), status: :see_other
+  end
 end
