@@ -1,9 +1,11 @@
 $background_footer_navbar: white;
 .footer {
+  position: static;
+  bottom: 0;
   background: $background_footer_navbar;
-  height: 160px;
+  height: 20vh;
   color: rgba(0,0,0,0.3);
-  border-top: rgba(0,0,0,0.3) solid 2px;
+  border-top: solid rgb(230, 230, 230) 2px;
   text-align: center;
   justify-content: center;
 }
