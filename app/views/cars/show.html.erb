@@ -54,7 +54,7 @@
       <% end %>
     </div>
     <div class="links">
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/krokrob", class: "card-user rounded-circle" %>
+      <%= cl_image_tag(@car.user.photo.key, class: "card-user rounded-circle") %>
       <%= simple_form_for [@car, @booking] do |f| %>
       <%= f.submit "Rent Now!", class: "btn btn-outline-primary" %>
       <% end %>
