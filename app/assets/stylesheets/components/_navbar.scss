@@ -1,11 +1,43 @@
 .navbar-aircnc {
+    position: fixed;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: transparent;
     padding-left: 1rem;
     padding-right: 1rem;
-    color: rgba(0,0,0,0.3);
+    color: rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px;
+    height: 13vh;
+    width: 100%;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 10rem;
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    height: 2.4rem;
+    border: solid 0.4px rgb(160, 160, 160);
+    &:focus-within {
+        border: solid red;
+    }
+}
+
+.search-input {
+    background-color: transparent;
+    color: black;
+    width: 90%;
+    &:focus {
+        outline: none;
+    }
     margin-bottom: 15px;
     height: 13vh;
 }
@@ -37,4 +69,9 @@
 }
 .search-btn{
   background-color: transparent;
+
+}
+
+.search-btn {
+    background-color: transparent;
 }
