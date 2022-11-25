@@ -38,6 +38,38 @@
     &:focus {
         outline: none;
     }
+    margin-bottom: 15px;
+    height: 13vh;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 10rem;
+}
+
+.search{
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  height: 2.4rem;
+  border: solid 0.4px rgb(160, 160, 160);
+  &:focus-within{
+    border: solid red;
+  }
+}
+.search-input{
+  background-color: transparent;
+  color: black;
+  width: 90%;
+  &:focus{
+    outline: none;
+  }
+}
+.search-btn{
+  background-color: transparent;
+
 }
 
 .search-btn {
