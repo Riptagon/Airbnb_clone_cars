@@ -1,6 +1,6 @@
 <nav class="navbar-aircnc">
   <%= link_to "AirSnS", root_path, class: "link-danger text-decoration-none logo fs-2" %>
-  <%= form_with url: root_path, method: :get, class: "rounded-pill px-1 search" do %>
+  <%= form_with url: cars_path, method: :get, class: "rounded-pill px-1 search" do %>
     <%= text_field_tag :query,
       params[:query],
       class: "search-input w-90 border-0",
