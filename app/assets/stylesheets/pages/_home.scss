@@ -23,8 +23,20 @@ h1 {
 
 .home-btn {
     position: absolute;
-    top: 50vh;
-    left: 50%;
+    top: 80%;
+    left: 38%;
     align-items: center;
     padding: 48px 64px;
+    background-color: transparent;
+    border: 15px;
+    border-radius: 12px;
+    border: solid 5px white;
+    font-size: xx-large;
+    color: white;
+}
+
+.home-btn:hover {
+    background-color: white;
+    color: black;
+    transition: 0.2s;
 }
