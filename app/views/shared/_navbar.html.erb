@@ -1,15 +1,23 @@
 <nav class="navbar-aircnc">
-  <%= link_to root_path, class: "logo" do %>
-  <img src="https://howtodrawforkids.com/wp-content/uploads/2022/02/how-to-draw-a-sports-car.jpg" alt="Logo" width=100>
+  <%= link_to "AirSnS", root_path, class: "link-danger text-decoration-none logo fs-2" %>
+  <%= form_with url: root_path, method: :get, class: "rounded-pill px-1 search" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "search-input w-90 border-0",
+      placeholder: "Search a car..."
+    %>
+    <%= button_tag :submit, class: "search-btn w-10 border-0" do %>
+      <i class="fas fa-search"></i>
+    <% end %>
   <% end %>
-  <div class="navbar-links text-center ">
+  <div class="navbar-links">
     <% if user_signed_in? %>
     <%= cl_image_tag(current_user.photo.key, class: "rounded-circle", width: 38, height: 38)%>
     <span class="current_user"><%= current_user.username %></span>
-      <div class="btn btn-warning"><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></div>
+      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "link-warning text-decoration-none" %>
     <% else %>
-      <div class="btn btn-warning"><%= link_to "Sign Up", new_user_registration_path, class: "dropdown-item" %></div>
-      <div class="btn btn-primary"><%= link_to "Login", new_user_session_path, class: "dropdown-item" %></div>
+      <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-outline-warning text-decoration-none" %>
+      <%= link_to "Login", new_user_session_path, class: "btn btn-outline-primary text-decoration-none" %>
     <% end %>
   </div>
 </nav>
