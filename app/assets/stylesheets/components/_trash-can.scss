@@ -1,0 +1,27 @@
+.trash-can {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+// trash-can-grey a {
+//   color: black;
+// }
+
+.fa-trash {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.fa-trash:hover {
+  color: rgba(0, 0, 0, 1);
+}
+
+.card-product h2 {
+  margin-left: 10px;
+}
+
+.margin-buttom {
+  margin-bottom: 15px;
+}

@@ -2,7 +2,11 @@ class CarsController < ApplicationController
   before_action :set_car, only: %i[show]
 
   def index
-    @cars = Car.all
+    if params[:query].present?
+      @cars = Car.search_by_info(params[:query])
+    else
+      @cars = Car.all
+    end
   end
 
   def show
@@ -16,6 +20,7 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(cars_params)
     if @car.save
+      @car.user = current_user
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity

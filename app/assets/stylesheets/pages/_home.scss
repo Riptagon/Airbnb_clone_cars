@@ -1,1 +1,30 @@
 // Specific CSS for your home-page
+.home_video {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    z-index: -2;
+}
+
+.home-video-wrapper {
+    height: 100vh;
+    display: flex;
+    position: relative;
+}
+
+h1 {
+    margin-inline: auto;
+    font-size: 8vh;
+    color: white;
+    margin-top: 6rem;
+}
+
+.home-btn {
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    align-items: center;
+    padding: 48px 64px;
+}

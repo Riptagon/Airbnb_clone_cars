@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :bookings
-  has_many :cars, through: :bookings
-  has_many :property
+  has_many :cars
+  has_one_attached :photo
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
   validates_presence_of :username, :email, :password

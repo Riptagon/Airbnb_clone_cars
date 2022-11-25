@@ -2,6 +2,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+.cars-img{
+  width: 100%;
+  max-height: 360px;
+}
 
 .card-trip {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);

@@ -9,18 +9,19 @@
 
   <%# first column of the car card %>
   <div class="content">
-    <div class="images">
-      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="container mb-3">
+      <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
           <% @car.photos.each_with_index do |photo, ind| %>
             <% if ind.zero? %>
               <div class="carousel-item active">
-                <%= cl_image_tag(photo.key, width: 400, height: 400, crop: :fill, class: "d-block w-100") %>
+                <%= cl_image_tag(photo.key, class: "d-block w-100") %>
               </div>
-            <% end %>
+            <% else %>
             <div class="carousel-item">
-              <%= cl_image_tag(photo.key, width: 400, height: 400, crop: :fill, class: "d-block w-100") %>
+              <%= cl_image_tag(photo.key, class: "d-block w-100") %>
             </div>
+            <% end %>
           <% end %>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -34,37 +35,31 @@
       </div>
     </div>
     <div class="infos">
-    <div>
-      <h2><%= @car.model %></h2>
-      <p>
-        The Ferrari 488 Pista is powered by the most powerful V8 engine in the Maranello marque’s history and is the company’s special series sports car with the highest level yet of technological transfer from racing.
-        In fact the name, meaning ‘track’ in Italian, was chosen speciﬁcally to testify to Ferrari’s unparalleled heritage in motor sports.
-        Technically, the Ferrari 488 Pista encompasses all of the experience built up on the world’s circuits by the 488 Challenge and the 488 GTE.
-      </p>
-    </div>
+      <div>
+        <h2>Description</h2>
+        <p><%= @car.description %></p>
+      </div>
     </div>
   </div>
 
   <%# second column of the car card %>
   <div class="details">
     <div class="infos">
-    <% @car.attributes.each do |key, val| %>
-      <% unless key == "id" || key == "created_at" || key == "updated_at" || key == "description" %>
-        <p class="title"><%= key.upcase %></p>
-        <p class="ctn"><%= val %></p>
-        <hr>
+      <% @car.attributes.each do |key, val| %>
+        <% unless key == "id" || key == "created_at" || key == "updated_at" || key == "description" %>
+          <p class="title"><%= key.upcase %></p>
+          <p class="ctn"><%= val %></p>
+          <hr>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+    <div class="links">
+      <%= cl_image_tag(@car.user.photo.key, class: "card-user rounded-circle") %>
+      <%= simple_form_for [@car, @booking] do |f| %>
+      <%= f.submit "Rent Now!", class: "btn btn-outline-primary" %>
+      <% end %>
     </div>
   </div>
-
-  <div class="links">
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/krokrob", class: "card-user rounded-circle" %>
-    <%= simple_form_for [@car, @booking] do |f| %>
-    <%= f.submit "Rent Now!", class: "btn btn-outline-primary" %>
-    <% end %>
-  </div>
-
 
 <%# end of the card %>
 </div>
