@@ -23,20 +23,24 @@ h1 {
 
 .home-btn {
     position: absolute;
-    top: 80%;
+    bottom: 3rem;
     left: 38%;
     align-items: center;
     padding: 48px 64px;
     background-color: transparent;
     border: 15px;
-    border-radius: 12px;
-    border: solid 5px white;
-    font-size: xx-large;
-    color: white;
+    border-radius: 20px;
+    border: solid 2px red;
+    font-size: large;
+    color: red;
+    width: 40%;
+    height: 15%;
 }
 
 .home-btn:hover {
-    background-color: white;
+    border: none;
+    background-color: red;
     color: black;
+    font-size: xx-large;
     transition: 0.2s;
 }
