@@ -31,16 +31,9 @@ h1 {
     border: 15px;
     border-radius: 20px;
     border: solid 2px red;
-    font-size: large;
+    font-size: x-large;
     color: red;
     width: 40%;
-    height: 15%;
-}
-
-.home-btn:hover {
-    border: none;
-    background-color: red;
-    color: black;
-    font-size: xx-large;
-    transition: 0.2s;
+    height: 20%;
+    margin-inline: auto;
 }
