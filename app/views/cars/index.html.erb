@@ -1,27 +1,19 @@
 <div class="container">
-  <h1>Rent a Car</h1>
+  <h1> <strong>Rent a Car</strong> </h1>
     <div class="cards">
       <% @cars.each do |car| %>
       <%= link_to car_path(car), class:"card-trip text-decoration-none" do %>
-          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+          <div id="carouselExampleSlidesOnly">
             <div class="carousel-inner">
-            <% car.photos.each_with_index do |photo, ind| %>
-              <% if ind.zero? %>
               <div class="carousel-item active cars-img">
-                <%= cl_image_tag(photo.key, width: 500, height: 300, crop: :fit, class: "d-block w-100") %>
+                <%= cl_image_tag(car.photos.first.key, width: 500, height: 300, crop: :fit, class: "d-block w-100") %>
               </div>
-              <% else %>
-              <div class="carousel-item cars-img">
-                <%= cl_image_tag(photo.key, width: 500, height: 300, crop: :fill, class: "d-block w-100") %>
-              </div>
-              <% end %>
-            <% end %>
             </div>
+
           </div>
           <div class="card-trip-infos">
           <div>
-            <h2><%= "#{car.brand} #{car.model}" %></h2>
-            <p>Short description here!</p>
+            <h2 class="black-p"><%= "#{car.brand} #{car.model}" %></h2>
           </div>
           <h2 class="card-trip-pricing">$<%= car.price %></h2>
           <%= cl_image_tag(car.user.photo.key, class: "card-trip-user avatar-bordered") %>
