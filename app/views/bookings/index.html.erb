@@ -1,16 +1,20 @@
 <div class="container">
   <% if @bookings.present? %>
-    <h1>Bookings</h1>
+    <h1><%= pluralize @bookings.size, "booking" %></h1>
     <% @bookings.each do |booking|  %>
-      <div class="card-product my-3 rounded">
+      <div class="card-product my-3 rounded ">
         <%= cl_image_tag(booking.car.photos.first.key, class: "d-block w-25") %>
-        <div class="card-product-infos ">
-        <h2>Enjoy the <%= booking.car.brand %> <%= booking.car.model %> in the color <%= booking.car.color %></h2>
-        <%= link_to "Delete", delete_booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+
+        <div class="card-product-infos trash-can">
+
+            <h2>Enjoy the <%= booking.car.brand %> <%= booking.car.model %> in the color <%= booking.car.color %></h2>
+            <div class="trash-can-grey"><%= link_to "", delete_booking_path(booking), class:"fa-solid fa-trash", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></div>
+
         </div>
       </div>
     <% end %>
   <% else %>
-    <h2>You dont have any booking</h2>
+    <h2>You don't have any bookings</h2>
+    <%= link_to "Make a new booking", root_path %>
   <% end %>
 </div>

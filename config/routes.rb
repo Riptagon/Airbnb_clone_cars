@@ -11,5 +11,4 @@ Rails.application.routes.draw do
   resources :cars, except: %i[index edit update] do
     resources :bookings, only: %i[new create index]
   end
-
 end
