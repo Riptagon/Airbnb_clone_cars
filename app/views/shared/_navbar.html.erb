@@ -14,6 +14,7 @@
     <% if user_signed_in? %>
     <%= cl_image_tag(current_user.photo.key, class: "rounded-circle", width: 38, height: 38)%>
     <span class="current_user"><%= current_user.username %></span>
+      <%= link_to "Rent a car", new_car_path, class: "btn btn-outline-danger text-decoration-none" %>
       <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "link-warning text-decoration-none" %>
     <% else %>
       <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-outline-warning text-decoration-none" %>
