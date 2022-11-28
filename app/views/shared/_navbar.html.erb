@@ -12,7 +12,13 @@
   <% end %>
   <div class="navbar-links">
     <% if user_signed_in? %>
-    <%= cl_image_tag(current_user.photo.key, class: "rounded-circle", width: 38, height: 38)%>
+    <div class="dropdown">
+      <%= cl_image_tag(current_user.photo.key, class: "rounded-circle dropdown-toggle", width: 38, height: 38, data: { "bs-toggle" => "dropdown" }, aria: { expanded: false })%>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <%= link_to "Rent your car", new_car_path, class:"link-primary dropdown-item" %>
+        <%= link_to "See your bookings", mycars_path, class:"link-primary dropdown-item" %>
+      </ul>
+    </div>
     <span class="current_user"><%= current_user.username %></span>
       <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "link-warning text-decoration-none" %>
     <% else %>
